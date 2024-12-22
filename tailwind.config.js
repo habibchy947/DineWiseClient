@@ -13,7 +13,9 @@ export default {
       },
       backgroundImage:{
         slide1: "url('/src/assets/bannerImg-2.avif')",
-        slide2: "url('/src/assets/bannerImg-3.avif')"
+        slide2: "url('/src/assets/bannerImg-3.avif')",
+        slide3: "url('/src/assets/banNew.jpg')",
+        footerBg: "url('/src/assets/footerImg.jpg')",
       }
     },
   },
