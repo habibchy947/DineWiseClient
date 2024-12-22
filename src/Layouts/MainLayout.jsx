@@ -4,7 +4,7 @@ import Navbar from '../Shared/Navbar';
 
 const MainLayout = () => {
     return (
-        <div className='font-raleWay'>
+        <div className='font-raleWay min-h-screen'>
             {/* navbar */}
             <Navbar></Navbar>
             <Outlet></Outlet>
