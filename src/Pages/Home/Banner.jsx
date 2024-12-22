@@ -21,7 +21,7 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className='bg-slide2  bg-no-repeat bg-cover h-[650px]  md:h-[550px]'>
+                    <div className='bg-slide2  bg-no-repeat bg-cover h-[650px]  md:h-[500px]'>
                         <div className='w-11/12 mx-auto py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-between'>
                             <div className='space-y-4 md:w-11/12 md:text-left  text-center'>
                                 <h2 className='text-4xl md:text-5xl leading-tight text-white font-bold '>Empowering Excellence in Hospitality Management</h2>
@@ -37,7 +37,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='bg-slide1  bg-no-repeat bg-cover h-[650px]  md:h-[550px]'>
+                    <div className='bg-slide1  bg-no-repeat bg-cover h-[650px]  md:h-[500px]'>
                         <div className='w-11/12 mx-auto py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-between'>
                             <div className='space-y-4 md:w-11/12 md:text-left  text-center'>
                                 <h2 className='text-4xl md:text-5xl leading-tight text-white font-bold  '>Driving Success in Hospitality, One Solution at a Time</h2>
@@ -52,7 +52,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='bg-slide3  bg-no-repeat bg-cover h-[650px] md:h-[550px]'>
+                    <div className='bg-slide3  bg-no-repeat bg-cover h-[650px] md:h-[500px]'>
                         <div className='w-11/12 mx-auto py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-5 items-center'>
                             <div className='space-y-4 md:w-11/12 md:text-left  text-center'>
                                 <h2 className='text-4xl md:text-5xl leading-tight text-white font-bold  '>Where Flavor Meets Excellence – Your Ultimate Dining Destination</h2>
