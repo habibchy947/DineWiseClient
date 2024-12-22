@@ -27,7 +27,7 @@ const Navbar = () => {
     }
     themeCheck()
     return (
-        <div className={`navbar px-0 ${location.pathname !== '/' && 'hidden'} w-11/12 mx-auto`}>
+        <div className={`navbar py-3 px-0 ${location.pathname !== '/' && 'hidden'} w-11/12 mx-auto`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

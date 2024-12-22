@@ -12,7 +12,7 @@ import Lottie from 'lottie-react';
 const Footer = () => {
     return (
         <div className='bg-footerBg bg-no-repeat bg-cover'>
-            <div className='w-11/12 mx-auto py-14 grid grid-cols-1 md:grid-cols-4 gap-16  text-center md:text-left'>
+            <div className='w-11/12 mx-auto py-14 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12  text-center md:text-left'>
                 <div className='space-y-5'>
                     <Link to='/'
                         className="flex items-center justify-center md:justify-start gap-1">
@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='flex flex-col justify-center md:justify-start items-center md:items-start'>
-                    <h2 className='text-2xl text-orange-500'>Contact</h2>
+                    <h2 className='text-2xl text-orange-500 mb-2'>Contact</h2>
                     <div className='flex items-center'>
                         <Lottie className='h-14 w-14' animationData={locationIcon} loop={true}></Lottie>
                         <span className='text-white'>444, Halisohor, Katalqong Abashik</span>
@@ -69,8 +69,7 @@ const Footer = () => {
                 </nav>
                 </div>
             </div>
-            <div className="divider divider-neutral"></div>
-            <p className='text-center text-gray-200 pb-5'>Copyright © {new Date().getFullYear()} - All right reserved by DineWise Ltd</p>
+            <p className='text-center text-gray-200 py-5 bg-gray-950'>Copyright © {new Date().getFullYear()} - All right reserved by DineWise Ltd</p>
         </div>
     );
 };
