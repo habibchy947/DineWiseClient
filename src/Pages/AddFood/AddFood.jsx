@@ -27,6 +27,7 @@ const AddFood = () => {
         axios.post('http://localhost:5000/add-food', food)
         .then(res => {
             console.log(res.data)
+            form.reset()
             if(res.data.insertedId){
                 toast.success('Food added successfully')
             }
@@ -71,6 +72,7 @@ const AddFood = () => {
                                 <option>Dessert</option>
                                 <option>Sandwich</option>
                                 <option>Curry</option>
+                                <option>Burger</option>
                             </select>
                         </div>
                         {/* food origin */}
