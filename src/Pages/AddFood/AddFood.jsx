@@ -1,5 +1,7 @@
 import React from 'react';
 import useAuth from '../../Context/AuthContext/useAuth';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const AddFood = () => {
     const { user } = useAuth()
@@ -21,6 +23,14 @@ const AddFood = () => {
         }
         const food = { foodName, foodPhoto, category, origin, quantity, price, description, addBy, purchase_count : 0 }
         console.log(food)
+
+        axios.post('http://localhost:5000/add-food', food)
+        .then(res => {
+            console.log(res.data)
+            if(res.data.insertedId){
+                toast.success('Food added successfully')
+            }
+        })
     }
     return (
         <>
@@ -60,6 +70,7 @@ const AddFood = () => {
                                 <option>Steak</option>
                                 <option>Dessert</option>
                                 <option>Sandwich</option>
+                                <option>Curry</option>
                             </select>
                         </div>
                         {/* food origin */}
