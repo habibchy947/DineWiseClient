@@ -7,9 +7,11 @@ const MainLayout = () => {
     return (
         <div className='font-raleWay'>
             {/* navbar */}
-            <Navbar></Navbar>
-            <div className='min-h-screen'>
-            <Outlet></Outlet>
+            <div className='border-b-2 border-gray-50 dark:border-gray-950 drop-shadow-md'>
+                <Navbar></Navbar>
+            </div>
+            <div className=''>
+                <Outlet></Outlet>
             </div>
             {/* footer */}
             <Footer></Footer>

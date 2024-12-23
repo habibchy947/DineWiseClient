@@ -19,18 +19,18 @@ const WhyChooseUs = () => {
                     perfection, and exceptional service
                 </p>
                 </div>
-                <div className='grid grid-cols-3 gap-3 pt-5'>
-                    <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-gray-50 to-slate-100'>
+                <div className='grid grid-cols-3 gap-4 pt-7'>
+                    <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-gray-100 to-slate-200'>
                         <img className='h-14 w-14' src={productIcon} alt="" />
-                        <h4>The use of natural best quality products</h4>
+                        <h4 className='text-black'>The use of natural best quality products</h4>
                     </div>
-                    <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-slate-100 to-gray-50'>
+                    <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-slate-200 to-gray-100'>
                         <img className='h-14 w-14' src={burgerIcon} alt="" />
-                        <h4>A new look on the right food</h4>
+                        <h4 className='text-black'>A new look on the right food</h4>
                     </div>
-                    <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-gray-50 to-slate-100'>
+                    <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-gray-100 to-slate-200'>
                         <img className='h-14 w-14' src={orderIcon} alt="" />
-                        <h4>Track Your Order in Real-Time</h4>
+                        <h4 className='text-black'>Track Your Order in Real-Time</h4>
                     </div>
                 </div>
             </div>
