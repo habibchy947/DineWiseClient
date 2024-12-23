@@ -29,7 +29,7 @@ const Register = () => {
     }
 
     // manual sign in
-    const handleSignIn = (e) => {
+    const handleSignUp = (e) => {
         e.preventDefault()
         const form = e.target
         const name = form.name.value
@@ -87,7 +87,7 @@ const Register = () => {
                 </div>
                 <div className='divider'>Or</div>
                 <div className="card w-full shrink-0 ">
-                    <form onSubmit={handleSignIn} className="card-body px-0 pt-0">
+                    <form onSubmit={handleSignUp} className="card-body px-0 pt-0">
                         {/* name field */}
                         <div className="form-control">
                             <label className="label">
