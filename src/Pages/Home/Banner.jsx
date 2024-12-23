@@ -26,7 +26,7 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className='bg-slide2 bg-no-repeat bg-blend-overlay bg-cover h-[650px] md:h-[500px]'>
+                    <div className='bg-slide2 bg-opacity-0 bg-no-repeat bg-cover h-[650px] md:h-[500px]'>
                         <div className='w-11/12 mx-auto py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-between'>
                             <div className='space-y-4 md:w-11/12 md:text-left  text-center'>
                                 <h2 className='text-4xl md:text-5xl leading-tight text-white font-bold '>Empowering Excellence in Hospitality Management</h2>

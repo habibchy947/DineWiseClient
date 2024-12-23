@@ -92,15 +92,15 @@ const Navbar = () => {
                             <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
-                                        alt="Tailwind CSS Navbar component"
-                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                        alt={user?.displayName}
+                                        src={user && user?.photoURL} />
                                 </div>
                             </div>
                             <ul
-                            
-                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content bg-white rounded-box !z-[999] mt-2 w-52 p-2 shadow`}>
+                                tabIndex={0}
+                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-box !z-[999] mt-2 w-52 p-2 shadow`}>
                                 <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>My Foods</NavLink></li>
-                                <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>Add Food</NavLink></li>
+                                <li><NavLink to="/add-food" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>Add Food</NavLink></li>
                                 <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>My Orders</NavLink></li>
                                 <li><button onClick={logOut}>LogOut</button></li>
                             </ul>

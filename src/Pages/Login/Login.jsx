@@ -4,7 +4,7 @@ import lottieAuth from '../../assets/register1.json'
 import { FcGoogle } from 'react-icons/fc';
 import toast from 'react-hot-toast';
 import useAuth from '../../Context/AuthContext/useAuth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import navLogo from '/favicon.png'
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
@@ -12,14 +12,14 @@ const Login = () => {
     const { setUser, googleSignIn, signInUser } = useAuth()
     const [eye, setEye] = useState(false)
     const navigate = useNavigate()
-
+    const location = useLocation()
     // google sign in
     const handleGoogle = (e) => {
         e.preventDefault()
         googleSignIn()
             .then(() => {
                 toast.success('Account created successfully')
-                navigate('/')
+                navigate(location?.state ? location.state : '/')
             })
             .catch(err => {
                 toast.error(err)
@@ -40,7 +40,7 @@ const Login = () => {
             toast.success("you are logged in successfully")
             setUser(result.user)
             form.reset()
-            navigate('/')
+            navigate(location?.state ? location.state : '/')
         })
         .catch(err => {
             toast.error("your password or email is not valid")
