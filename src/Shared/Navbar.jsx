@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import navLogo from '/favicon.png'
+import useAuth from '../Context/AuthContext/useAuth';
 const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -8,22 +9,24 @@ const Navbar = () => {
         <li><NavLink to='/gallery'>Gallery</NavLink></li>
     </>
     const location = useLocation()
+    const [toggle, setToggle] = useState(false)
+    const { user, logOut } = useAuth()
     const userTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
     const themeCheck = () => {
-        if(userTheme === "dark" || (!userTheme && systemTheme)){
+        if (userTheme === "dark" || (!userTheme && systemTheme)) {
             document.documentElement.classList.add("dark")
             return
         }
     }
     const themeSwitch = () => {
-        if(document.documentElement.classList.contains("dark")){
+        if (document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.remove("dark")
             localStorage.setItem("theme", "light")
             return
         }
         document.documentElement.classList.add("dark")
-        localStorage.setItem("theme","dark")
+        localStorage.setItem("theme", "dark")
     }
     themeCheck()
     return (
@@ -46,7 +49,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-white rounded-box z-[20] mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
@@ -65,7 +68,7 @@ const Navbar = () => {
                     {/* sun icon */}
                     <svg
                         className="swap-off h-10 w-10 fill-current"
-                        onClick={()=>themeSwitch()}
+                        onClick={() => themeSwitch()}
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24">
                         <path
@@ -75,14 +78,37 @@ const Navbar = () => {
                     {/* moon icon */}
                     <svg
                         className="swap-on h-10 w-10 fill-current"
-                        onClick={()=>themeSwitch()}
+                        onClick={() => themeSwitch()}
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24">
                         <path
                             d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                     </svg>
                 </label>
-                <Link to='/login' className="btn bg-orange-400 text-white border-none rounded-md">Login</Link>
+                <div>
+                    {user ?
+                        // profile
+                        <div className="dropdown dropdown-end">
+                            <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                </div>
+                            </div>
+                            <ul
+                            
+                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content bg-white rounded-box !z-[999] mt-2 w-52 p-2 shadow`}>
+                                <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>My Foods</NavLink></li>
+                                <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>Add Food</NavLink></li>
+                                <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500' : ""}`}>My Orders</NavLink></li>
+                                <li><button onClick={logOut}>LogOut</button></li>
+                            </ul>
+                        </div>
+                        :
+                        // login
+                        <Link to='/login' className="btn bg-orange-400 text-white border-none rounded-md">Login</Link>}
+                </div>
             </div>
         </div>
     );
