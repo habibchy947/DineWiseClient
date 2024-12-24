@@ -16,7 +16,7 @@ const Gallery = () => {
             <div className='bg-galleryBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
                 <h3 className='text-center text-6xl font-bold text-white'>Food Gallery</h3>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-11/12 mx-auto py-10'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-11/12 mx-auto py-10'>
                 {
                     gallery.map((image, idx) => (
                         <div
