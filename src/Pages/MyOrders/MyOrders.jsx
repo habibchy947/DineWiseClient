@@ -3,15 +3,51 @@ import useAuth from '../../Context/AuthContext/useAuth';
 import axios from 'axios';
 import { MdEdit } from 'react-icons/md';
 import moment from 'moment';
+import toast from 'react-hot-toast';
 
 const MyOrders = () => {
-    const {user} = useAuth()
+    const { user } = useAuth()
     const [foods, setFood] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders/${user?.email}`)
+        axios.get(`http://localhost:5000/orders?email=${user?.email}`)
             .then(res => setFood(res.data))
     }, [user.email])
-    console.log(foods)
+
+
+    const handleDeleteOrder = async (id) => {
+        try {
+            const { data } = await axios.delete(`http://localhost:5000/orders/${id}`)
+            console.log(data)
+            toast.success('Order deleted successfully')
+            const remaining = foods.filter(fod => fod._id !== id)
+            setFood(remaining)
+        } catch (err) {
+            console.log(err)
+            toast.error(err.message)
+        }
+    }
+    const deleteConfirmation = (id) => {
+        toast(t => (
+            <div className='flex gap-3 items-center'>
+                <div>
+                    <p>Are you <b>sure?</b></p>
+                </div>
+                <div className='flex gap-2'>
+                    <button
+                        className='bg-red-400 text-white px-3 py-1 rounded-md'
+                        onClick={() => {
+                            toast.dismiss(t.id)
+                            handleDeleteOrder(id)
+                        }}
+                    >Yes
+                    </button>
+                    <button className='bg-green-400 text-white px-3 py-1 rounded-md'
+                    onClick={()=>toast.dismiss(t.id)}
+                    >Cancel</button>
+                </div>
+            </div>
+        ))
+    }
     return (
         <div>
             <div className='bg-allFoodBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
@@ -56,7 +92,7 @@ const MyOrders = () => {
                                 <td>{food.foodPrice}$</td>
                                 <td>{moment().subtract(10, 'days').calendar(food.buying_date)}</td>
                                 <th>
-                                    <button className="btn btn-sm text-xl text-orange-500"><MdEdit /></button>
+                                    <button onClick={() => deleteConfirmation(food._id)} className="btn btn-sm text-xl text-orange-500"><MdEdit /></button>
                                 </th>
 
                             </tr>)
