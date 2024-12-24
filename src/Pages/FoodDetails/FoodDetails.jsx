@@ -39,7 +39,7 @@ const FoodDetails = () => {
                     </p>
                     <span className=''>{description}</span>
                     <div>
-                        <Link>
+                        <Link to={`/foodPurchase/${_id}`}>
                             <button className='btn bg-orange-500 border-none text-white rounded-md'>
                                 Purchase
                             </button>
