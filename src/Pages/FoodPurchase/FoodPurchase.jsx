@@ -42,7 +42,7 @@ const FoodPurchase = () => {
                     console.log(data)
                     form.reset()
                     if (data.insertedId) {
-                        toast.success('Food ordered successfully')
+                        toast.success('Food purchased successfully')
                         navigate('/my-orders')
                     }
                 

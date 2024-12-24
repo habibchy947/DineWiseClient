@@ -52,7 +52,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/gallery',
-                element:<Gallery></Gallery>
+                element:<Gallery></Gallery>,
+                loader:()=>fetch('/gallery.json')
             },
             {
                 path:'/login',

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const AddFood = () => {
     const { user } = useAuth()
     const navigate = useNavigate()
-    const handleAddFood = (e) => {
+    const handleAddFood = async (e) => {
         e.preventDefault()
         const form = e.target
         const foodName = form.foodName.value
@@ -26,15 +26,18 @@ const AddFood = () => {
         const food = { foodName, foodPhoto, category, origin, quantity, price, description, addBy, purchase_count : 0 }
         console.log(food)
 
-        axios.post('http://localhost:5000/add-food', food)
-        .then(res => {
-            console.log(res.data)
+        try{
+          const {data} = await axios.post('http://localhost:5000/add-food', food)
+            console.log(data)
             form.reset()
-            if(res.data.insertedId){
+            if(data.insertedId){
                 toast.success('Food added successfully')
                 navigate('/my-foods')
             }
-        })
+        }catch(err){
+            console.log(err)
+            toast.error(err)
+        }
     }
     return (
         <>

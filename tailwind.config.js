@@ -18,6 +18,7 @@ export default {
         footerBg: "url('/src/assets/footerImg.jpg')",
         allFoodBg: "url('/src/assets/footerBg.jpg')",
         addFoodBg: "url('/src/assets/addFoodBg.avif')",
+        galleryBg: "url('/src/assets/gallery.jpg')",
       },
     },
   },
