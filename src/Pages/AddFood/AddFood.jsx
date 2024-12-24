@@ -2,9 +2,11 @@ import React from 'react';
 import useAuth from '../../Context/AuthContext/useAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const AddFood = () => {
     const { user } = useAuth()
+    const navigate = useNavigate()
     const handleAddFood = (e) => {
         e.preventDefault()
         const form = e.target
@@ -30,6 +32,7 @@ const AddFood = () => {
             form.reset()
             if(res.data.insertedId){
                 toast.success('Food added successfully')
+                navigate('/my-foods')
             }
         })
     }

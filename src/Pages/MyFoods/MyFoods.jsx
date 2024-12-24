@@ -38,9 +38,12 @@ const MyFoods = () => {
             name: user?.displayName,
             email: user?.email
         }
+        if(user?.email !== singleFood.addBy.email){
+            return toast.error('invalid user')
+        }
         const food = { foodName, foodPhoto, category, origin, quantity, price, description, addBy, purchase_count: singleFood.purchase_count }
         console.log(food)
-
+        
         axios.put(`http://localhost:5000/update-food/${singleFood._id}`, food)
             .then(res => {
                 console.log(res.data)

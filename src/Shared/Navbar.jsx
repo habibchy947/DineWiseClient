@@ -102,7 +102,7 @@ const Navbar = () => {
                                 className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-box z-[9999999999] mt-2 w-52 p-2 shadow`}>
                                 <li><NavLink to="/my-foods" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Foods</NavLink></li>
                                 <li><NavLink to="/add-food" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>Add Food</NavLink></li>
-                                <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Orders</NavLink></li>
+                                <li><NavLink to="/my-orders" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Orders</NavLink></li>
                                 <li><button onClick={logOut}>LogOut</button></li>
                             </ul>
                         </div>
