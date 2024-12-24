@@ -88,17 +88,18 @@ const Navbar = () => {
                 <div>
                     {user ?
                         // profile
-                        <div className="dropdown dropdown-end">
+                        <div className="dropdown dropdown-end z-[50]">
                             <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
+                                    referrerPolicy='no-referrer'
                                         alt={user?.displayName}
                                         src={user && user?.photoURL} />
                                 </div>
                             </div>
                             <ul
                                 tabIndex={0}
-                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-box !z-[999] mt-2 w-52 p-2 shadow`}>
+                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-box z-[1] mt-2 w-52 p-2 shadow`}>
                                 <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Foods</NavLink></li>
                                 <li><NavLink to="/add-food" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>Add Food</NavLink></li>
                                 <li><NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Orders</NavLink></li>

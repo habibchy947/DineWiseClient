@@ -9,7 +9,6 @@ const AllFoods = () => {
         axios.get(`http://localhost:5000/allFoods?search=${search}`)
             .then(res => setFood(res.data))
     }, [search])
-    console.log(foods)
     return (
         <div>
             <div className='bg-allFoodBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
@@ -27,7 +26,7 @@ const AllFoods = () => {
                     className="input input-bordered w-96 dark:bg-gray-950 join-item" />
                 <button className="btn bg-orange-400 border-none text-white join-item">Search</button>
             </div>
-            <div className='pt-3 pb-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+            <div className='pt-3 pb-5 grid grid-cols-1 md:grid-cols-3 gap-6'>
                 {
                     foods.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                 }

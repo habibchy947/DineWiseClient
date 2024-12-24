@@ -10,7 +10,7 @@ const MainLayout = () => {
             <div className='border-b-2 border-gray-50 dark:border-gray-950 drop-shadow-md'>
                 <Navbar></Navbar>
             </div>
-            <div className=''>
+            <div className='min-h-[calc(100vh-306px)]'>
                 <Outlet></Outlet>
             </div>
             {/* footer */}
