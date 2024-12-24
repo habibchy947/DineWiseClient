@@ -17,7 +17,7 @@ const TopFoods = () => {
                     foods.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                 }
             </div>
-            <Link to='/all-foods'><button className='btn rounded-md bg-orange-500 text-white text-lg font-semibold btn-wide'>See All</button></Link>
+            <Link to='/all-foods'><button className='btn rounded-md border-none bg-orange-500 text-white text-lg font-semibold btn-wide'>See All</button></Link>
         </div>
     );
 };
