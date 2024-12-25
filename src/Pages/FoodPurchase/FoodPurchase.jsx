@@ -37,11 +37,11 @@ const FoodPurchase = () => {
             return toast.error('Action not Permitted!')
         }
         const order = { foodId, name, foodPrice, foodQuantity, buyer_email, buyer_name, buying_date }
-        console.table(order)
+        // console.table(order)
 
         try {
            const {data} = await axiosSecure.post('/add-order', order)
-                    console.log(data)
+                    // console.log(data)
                     form.reset()
                     if (data.insertedId) {
                         toast.success('Food purchased successfully')

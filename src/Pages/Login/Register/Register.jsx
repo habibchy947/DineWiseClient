@@ -24,7 +24,7 @@ const Register = () => {
                 navigate('/')
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 
@@ -37,7 +37,7 @@ const Register = () => {
         const photo = form.photo.value
         const password = form.password.value
         const user = { name, email, photo, password }
-        console.log(user)
+        // console.log(user)
         // password validation
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!regex.test(password)) {
@@ -51,13 +51,13 @@ const Register = () => {
         // sign up
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 setUser(result.user)
                 toast.success('Account created successfully')
                 // update profile
                 updateProfile(auth.currentUser, profile)
                     .then(() => {
-                        console.log("updated profile")
+                        // console.log("updated profile")
                         navigate('/')
                     })
                     .catch(err => {
@@ -65,7 +65,7 @@ const Register = () => {
                     })
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
                 toast.error('Your password or email is not valid')
             })
     }

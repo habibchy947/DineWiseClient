@@ -44,11 +44,11 @@ const MyFoods = () => {
             return toast.error('invalid user')
         }
         const food = { foodName, foodPhoto, category, origin, quantity, price, description, addBy, purchase_count: singleFood.purchase_count }
-        console.log(food)
+        // console.log(food)
         
         axios.put(`http://localhost:5000/update-food/${singleFood._id}`, food)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount) {
                     setFood((prevFoods)=> prevFoods.map(fody => fody._id === singleFood._id ? {...fody, ...food} : fody) )
                     modalRef.current.close()

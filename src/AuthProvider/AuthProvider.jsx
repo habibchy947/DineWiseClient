@@ -5,7 +5,7 @@ import axios from 'axios';
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    console.log(user)
+    // console.log(user)
     const [loading, setLoading] = useState(true)
     // google sign in
     const provider = new GoogleAuthProvider()
@@ -33,19 +33,19 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-            console.log('state captured', currentUser?.email)
+            // console.log('state captured', currentUser?.email)
 
             if (currentUser?.email) {
                 const user1 = { email: currentUser?.email }
                 axios.post('http://localhost:5000/jwt', user1, { withCredentials: true })
                     .then(res => {
-                        console.log("login token",res.data)
+                        // console.log("login token",res.data)
                         setLoading(false)
                     })
             }else{
                 axios.post('http://localhost:5000/logout', {}, {withCredentials: true})
                 .then(res => {
-                    console.log('logout', res.data)
+                    // console.log('logout', res.data)
                     setLoading(false)
                 })
             }

@@ -32,11 +32,11 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
         const user = { email, password }
-        console.log(user)
+        // console.log(user)
         // sign in user 
         signInUser(email, password)
         .then(result => {
-            console.log(result.user)
+            // console.log(result.user)
             toast.success("you are logged in successfully")
             setUser(result.user)
             form.reset()
@@ -44,7 +44,7 @@ const Login = () => {
         })
         .catch(err => {
             toast.error("your password or email is not valid")
-            console.log(err)
+            // console.log(err)
         })
 
     }

@@ -17,14 +17,14 @@ const useAxiosSecure = () => {
             return response
         } , error => {
             if(error.status === 401 || error.status === 403){
-                console.log('need to logout the users')
+                // console.log('need to logout the users')
                 logOut()
                 .then(()=> {
                     navigate('/login')
                     return toast.error(error.response.data.message)
                 })
                 .catch(err => {
-                    console.error(err.message)
+                    // console.error(err.message)
                 })
             }
             return Promise.reject(error)

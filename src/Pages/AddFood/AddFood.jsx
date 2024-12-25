@@ -26,18 +26,18 @@ const AddFood = () => {
             email: user?.email
         }
         const food = { foodName, foodPhoto, category, origin, quantity, price, description, addBy, purchase_count : 0 }
-        console.log(food)
+        // console.log(food)
 
         try{
           const {data} = await axiosSecure.post('/add-food', food)
-            console.log(data)
+            // console.log(data)
             form.reset()
             if(data.insertedId){
                 toast.success('Food added successfully')
                 navigate('/my-foods')
             }
         }catch(err){
-            console.err(err)
+            // console.err(err)
             toast.error(err.response?.data?.message || err.message || err)
         }
     }

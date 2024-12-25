@@ -19,12 +19,12 @@ const MyOrders = () => {
     const handleDeleteOrder = async (id) => {
         try {
             const { data } = await axios.delete(`http://localhost:5000/orders/${id}`)
-            console.log(data)
+            // console.log(data)
             toast.success('Order deleted successfully')
             const remaining = foods.filter(fod => fod._id !== id)
             setFood(remaining)
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             toast.error(err.message)
         }
     }
