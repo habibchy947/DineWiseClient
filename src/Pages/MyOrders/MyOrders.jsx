@@ -18,7 +18,7 @@ const MyOrders = () => {
 
     const handleDeleteOrder = async (id) => {
         try {
-            const { data } = await axios.delete(`http://localhost:5000/orders/${id}`)
+            const { data } = await axios.delete(`https://dine-wise-server-pi.vercel.app/orders/${id}`)
             // console.log(data)
             toast.success('Order deleted successfully')
             const remaining = foods.filter(fod => fod._id !== id)

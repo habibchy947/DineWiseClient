@@ -6,7 +6,7 @@ const AllFoods = () => {
     const [foods, setFood] = useState([])
     const [search, setSearch] = useState('')
     useEffect(() => {
-        axios.get(`http://localhost:5000/allFoods?search=${search}`)
+        axios.get(`https://dine-wise-server-pi.vercel.app/allFoods?search=${search}`)
             .then(res => setFood(res.data))
     }, [search])
     return (

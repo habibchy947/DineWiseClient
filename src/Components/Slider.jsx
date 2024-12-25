@@ -31,7 +31,7 @@ const Slider = () => {
                     <Slide
                         image={bgImg1}
                         title='Elevating the Art of Exceptional Dining'
-                        description="Effortlessly manage reservations, and menus while delivering dining experiences with our restaurant management system"
+                        description="Effortlessly manage reservation, and menus while delivering dining experiences with our restaurant management system"
                     />
                 </SwiperSlide>
                 <SwiperSlide>

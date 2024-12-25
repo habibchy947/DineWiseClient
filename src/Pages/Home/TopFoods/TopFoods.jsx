@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const TopFoods = () => {
     const [foods, setFood] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/allFoods?top=true&limit=6`)
+        axios.get(`https://dine-wise-server-pi.vercel.app/allFoods?top=true&limit=6`)
             .then(res => setFood(res.data))
     }, [])
     return (

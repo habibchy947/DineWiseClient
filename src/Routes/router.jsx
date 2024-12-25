@@ -30,12 +30,12 @@ const router = createBrowserRouter([
             {
                 path:'/foodDetails/:id',
                 element:<FoodDetails></FoodDetails>,
-                loader:({params})=> fetch(`http://localhost:5000/food-details/${params.id}`)
+                loader:({params})=> fetch(`https://dine-wise-server-pi.vercel.app/food-details/${params.id}`)
             },
             {
                 path:'/foodPurchase/:id',
                 element:<PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/food-details/${params.id}`)
+                loader:({params})=> fetch(`https://dine-wise-server-pi.vercel.app/food-details/${params.id}`)
 
             },
             {
