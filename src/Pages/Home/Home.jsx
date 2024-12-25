@@ -8,7 +8,6 @@ import Slider from '../../Components/Slider';
 const Home = () => {
     return (
         <div>
-            {/* <Banner></Banner> */}
             <Slider></Slider>
             <TopFoods></TopFoods>
             <WhyChooseUs></WhyChooseUs>
