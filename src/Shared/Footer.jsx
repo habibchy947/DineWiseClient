@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import navLogo from '/favicon.png'
-import { FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiYoutube } from 'react-icons/si';
 import { IoLogoFacebook } from 'react-icons/io';
@@ -11,7 +11,7 @@ import mailIcon from '../assets/mail.json'
 import Lottie from 'lottie-react';
 const Footer = () => {
     return (
-        <div className='bg-footerBg bg-no-repeat bg-cover'>
+        <div className='bg-footerBg bg-blend-overlay bg-[#3f3c3c] bg-no-repeat bg-cover'>
             <div className='w-11/12 mx-auto py-14 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12  text-center md:text-left'>
                 <div className='space-y-5'>
                     <Link to='/'

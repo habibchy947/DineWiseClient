@@ -30,10 +30,12 @@ const Navbar = () => {
     }
     themeCheck()
     return (
-        <div className={`navbar py-3 px-0  w-11/12 mx-auto`}>
+        <div className={`navbar py-3  px-0 w-11/12  mx-auto`}>
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div
+                    onClick={() => setToggle(!toggle)}
+                    tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -49,7 +51,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-white rounded-box z-[20] mt-3 w-52 p-2 shadow">
+                        className={`${!toggle && 'hidden'} menu menu-sm dropdown-content bg-white dark:text-black rounded-md z-[20] mt-3 w-52 p-2 shadow`}>
                         {links}
                     </ul>
                 </div>
@@ -90,7 +92,7 @@ const Navbar = () => {
                     <div className='flex items-center'>
                         <button className='px-2 py-1 md:px-5 md:py-2 rounded-sm font-semibold bg-gray-300' onClick={logOut}>LogOut</button>
                         {/* profile */}
-                        <div className="dropdown dropdown-end z-[999]">
+                        <div className="dropdown dropdown-end z-50">
                             <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
@@ -101,7 +103,7 @@ const Navbar = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-box z-[9999999999] mt-2 w-52 p-2 shadow`}>
+                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-md z-[1] mt-2 w-52 p-2 shadow`}>
                                 <li><NavLink to="/my-foods" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Foods</NavLink></li>
                                 <li><NavLink to="/add-food" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>Add Food</NavLink></li>
                                 <li><NavLink to="/my-orders" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Orders</NavLink></li>

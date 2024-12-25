@@ -7,9 +7,9 @@ const MainLayout = () => {
     return (
         <div className='font-raleWay'>
             {/* navbar */}
-            <div className='border-b-2 border-gray-50 dark:border-gray-950 drop-shadow-md'>
+                <div className='dark:bg-gray-950'>
                 <Navbar></Navbar>
-            </div>
+                </div>
             <div className='min-h-[calc(100vh-306px)]'>
                 <Outlet></Outlet>
             </div>
