@@ -4,14 +4,16 @@ import useAuth from '../../Context/AuthContext/useAuth';
 import axios from 'axios';
 import { ImCancelCircle } from 'react-icons/im';
 import toast from 'react-hot-toast';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const MyFoods = () => {
     const { user } = useAuth()
+    const axiosSecure = useAxiosSecure()
     const [foods, setFood] = useState([])
     const [singleFood, setSingleFood] = useState({})
     const modalRef = useRef(null)
     useEffect(() => {
-        axios.get(`http://localhost:5000/allFoods/${user?.email}`)
+        axiosSecure.get(`/allFoods/${user?.email}`)
             .then(res => setFood(res.data))
     }, [user.email])
 

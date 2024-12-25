@@ -53,7 +53,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className="flex items-center gap-1"><span><img className='h-10 w-10' src={navLogo} alt="" /></span><span className='font-aguDisplay text-4xl'>DineWise</span></Link>
+                <Link to='/' className="flex items-center gap-1"><span><img className='h-10 w-10' src={navLogo} alt="" /></span><span className='font-aguDisplay text-3xl md:text-4xl'>DineWise</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal gap-3 text-lg px-1">
@@ -87,7 +87,9 @@ const Navbar = () => {
                 </label>
                 <div>
                     {user ?
-                        // profile
+                    <div className='flex items-center'>
+                        <button className='px-2 py-1 md:px-5 md:py-2 rounded-sm font-semibold bg-gray-300' onClick={logOut}>LogOut</button>
+                        {/* profile */}
                         <div className="dropdown dropdown-end z-[999]">
                             <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
@@ -103,9 +105,10 @@ const Navbar = () => {
                                 <li><NavLink to="/my-foods" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Foods</NavLink></li>
                                 <li><NavLink to="/add-food" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>Add Food</NavLink></li>
                                 <li><NavLink to="/my-orders" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Orders</NavLink></li>
-                                <li><button onClick={logOut}>LogOut</button></li>
                             </ul>
                         </div>
+                    </div>
+                        
                         :
                         // login
                         <Link to='/login' className="btn bg-orange-400 text-white border-none rounded-md">Login</Link>}

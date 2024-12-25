@@ -4,13 +4,15 @@ import axios from 'axios';
 import { MdEdit } from 'react-icons/md';
 import moment from 'moment';
 import toast from 'react-hot-toast';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const MyOrders = () => {
     const { user } = useAuth()
+    const axiosSecure = useAxiosSecure()
     const [foods, setFood] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders?email=${user?.email}`)
-            .then(res => setFood(res.data))
+        axiosSecure.get(`/orders?email=${user?.email}`)
+        .then(res => setFood(res.data))
     }, [user.email])
 
 
@@ -51,7 +53,7 @@ const MyOrders = () => {
     return (
         <div>
             <div className='bg-allFoodBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
-                <h3 className='text-center text-6xl font-bold text-white'>Food Purchase</h3>
+                <h3 className='text-center text-6xl font-bold text-white'>My Orders</h3>
             </div>
             <div className="overflow-x-auto w-11/12 md:w-10/12 mx-auto my-10 border-2 rounded-sm">
                 <table className="table">
@@ -90,7 +92,7 @@ const MyOrders = () => {
                                     {food.owner}
                                 </td>
                                 <td>{food.foodPrice}$</td>
-                                <td>{moment().subtract(10, 'days').calendar(food.buying_date)}</td>
+                                <td>{food.buying_date ? moment(food.buying_date).format('MM/DD/YYYY') : 'N/A'}</td>
                                 <th>
                                     <button onClick={() => deleteConfirmation(food._id)} className="btn btn-sm text-xl text-orange-500"><MdEdit /></button>
                                 </th>

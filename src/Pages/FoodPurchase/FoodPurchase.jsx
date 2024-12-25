@@ -3,10 +3,12 @@ import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../Context/AuthContext/useAuth';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const FoodPurchase = () => {
     const { user } = useAuth()
     const navigate = useNavigate()
+    const axiosSecure = useAxiosSecure()
     const food = useLoaderData()
     const { foodName, price, quantity, addBy, _id, purchase_count } = food || {}
 
@@ -38,7 +40,7 @@ const FoodPurchase = () => {
         console.table(order)
 
         try {
-           const {data} = await axios.post('http://localhost:5000/add-order', order)
+           const {data} = await axiosSecure.post('/add-order', order)
                     console.log(data)
                     form.reset()
                     if (data.insertedId) {
@@ -47,7 +49,7 @@ const FoodPurchase = () => {
                     }
                 
         } catch(err){
-            toast.error(err?.response?.data)
+            toast.error(err.response?.data?.message || err.message || err?.response?.data)
         }
        
     }

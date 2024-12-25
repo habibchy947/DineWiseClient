@@ -3,10 +3,12 @@ import useAuth from '../../Context/AuthContext/useAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const AddFood = () => {
     const { user } = useAuth()
     const navigate = useNavigate()
+    const axiosSecure = useAxiosSecure()
     const handleAddFood = async (e) => {
         e.preventDefault()
         const form = e.target
@@ -27,7 +29,7 @@ const AddFood = () => {
         console.log(food)
 
         try{
-          const {data} = await axios.post('http://localhost:5000/add-food', food)
+          const {data} = await axiosSecure.post('/add-food', food)
             console.log(data)
             form.reset()
             if(data.insertedId){
@@ -35,8 +37,8 @@ const AddFood = () => {
                 navigate('/my-foods')
             }
         }catch(err){
-            console.log(err)
-            toast.error(err)
+            console.err(err)
+            toast.error(err.response?.data?.message || err.message || err)
         }
     }
     return (
