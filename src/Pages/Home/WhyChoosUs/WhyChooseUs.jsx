@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
                     perfection, and exceptional service
                 </p>
                 </div>
-                <div className='grid grid-cols-3 gap-4 pt-7'>
+                <div className='grid md:grid-cols-3 gap-4 pt-7 w-9/12 md:w-full mx-auto'>
                     <div className='p-5 flex flex-col text-center justify-center items-center space-y-2 bg-gradient-to-b from-gray-100 to-slate-200'>
                         <img className='h-14 w-14' src={productIcon} alt="" />
                         <h4 className='text-black'>The use of natural best quality products</h4>

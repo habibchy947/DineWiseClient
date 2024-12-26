@@ -32,7 +32,6 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
         const user = { email, password }
-        // console.log(user)
         // sign in user 
         signInUser(email, password)
         .then(result => {
