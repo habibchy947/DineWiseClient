@@ -30,7 +30,7 @@ const Navbar = () => {
     }
     themeCheck()
     return (
-        <div className={`navbar py-3  px-0 w-11/12  mx-auto`}>
+        <div className={`navbar py-3  px-0 container  mx-auto`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -90,7 +90,7 @@ const Navbar = () => {
                 <div>
                     {user ?
                     <div className='flex items-center'>
-                        <button className='px-2 py-1 md:px-5 md:py-2 rounded-sm font-semibold bg-gray-300' onClick={logOut}>LogOut</button>
+                        <button className='px-2 py-1 md:px-5 md:py-2 rounded-sm font-semibold text-black bg-gray-300' onClick={logOut}>LogOut</button>
                         {/* profile */}
                         <div className="dropdown dropdown-end z-50">
                             <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

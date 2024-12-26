@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useAuth from '../../Context/AuthContext/useAuth';
 import axios from 'axios';
-import { MdEdit } from 'react-icons/md';
 import moment from 'moment';
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../../Shared/Loading';
 
 const MyOrders = () => {
     const { user } = useAuth()
     const axiosSecure = useAxiosSecure()
-    const [foods, setFood] = useState([])
-    useEffect(() => {
-        axiosSecure.get(`/orders?email=${user?.email}`)
-        .then(res => setFood(res.data))
-    }, [user.email])
-
+    
+    const { data: foods = [], isLoading} = useQuery({
+        queryKey: ['foods', user.email],
+        queryFn: async () => {
+            const { data } = await axiosSecure.get(`/orders?email=${user?.email}`)
+            return data
+        }
+    })
 
     const handleDeleteOrder = async (id) => {
         try {
@@ -68,7 +72,9 @@ const MyOrders = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
+                    {isLoading && <Loading></Loading>}
                         {/* row 1 */}
                         {
                             foods.map((food, idx) => <tr key={idx}>
@@ -94,7 +100,7 @@ const MyOrders = () => {
                                 <td>{food.foodPrice}$</td>
                                 <td>{food.buying_date ? moment(food.buying_date).format('MM/DD/YYYY') : 'N/A'}</td>
                                 <th>
-                                    <button onClick={() => deleteConfirmation(food._id)} className="btn btn-sm text-xl text-orange-500"><MdEdit /></button>
+                                    <button onClick={() => deleteConfirmation(food._id)} className="btn btn-ghost btn-sm text-xl text-red-500"><RiDeleteBin6Line /></button>
                                 </th>
 
                             </tr>)

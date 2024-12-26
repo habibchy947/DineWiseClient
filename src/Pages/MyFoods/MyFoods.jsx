@@ -5,18 +5,23 @@ import axios from 'axios';
 import { ImCancelCircle } from 'react-icons/im';
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../../Shared/Loading';
 
 const MyFoods = () => {
     const { user } = useAuth()
     const axiosSecure = useAxiosSecure()
-    const [foods, setFood] = useState([])
     const [singleFood, setSingleFood] = useState({})
     const modalRef = useRef(null)
-    useEffect(() => {
-        axiosSecure.get(`/allFoods/${user?.email}`)
-            .then(res => setFood(res.data))
-    }, [user.email])
-
+    
+    const { data: foods = [], isLoading} = useQuery({
+        queryKey: ['food', user.email],
+        queryFn: async () => {
+            const { data } = await axiosSecure.get(`/allFoods/${user?.email}`)
+            return data
+        }
+    })
+    
     const handleModal = (id) => {
         setSingleFood({})
         document.getElementById('my_modal_5').showModal()
@@ -75,6 +80,7 @@ const MyFoods = () => {
                         </tr>
                     </thead>
                     <tbody>
+                    {isLoading && <Loading></Loading>}
                         {/* row 1 */}
                         {
                             foods.map((food, idx) => <tr key={idx}>
@@ -100,7 +106,7 @@ const MyFoods = () => {
                                 <td>{food.quantity}</td>
                                 <td>{food.price}$</td>
                                 <th>
-                                    <button onClick={() => handleModal(food._id)} className="btn btn-sm text-xl text-orange-500"><MdEdit /></button>
+                                    <button onClick={() => handleModal(food._id)} className="btn btn-sm btn-ghost text-xl text-orange-500"><MdEdit /></button>
                                 </th>
 
                             </tr>)
