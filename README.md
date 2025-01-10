@@ -112,6 +112,6 @@ Start the server
 
 
 ## 📋 Relevant Links
-- **Github repo**  [https://github.com/habibchy947/Dinewise-Restaurant.git](https://github.com/habibchy947/Dinewise-Restaurant.git)
+- **Github repo**  [https://github.com/habibchy947/DineWiseClient.git](https://github.com/habibchy947/DineWiseClient.git)
 
 
