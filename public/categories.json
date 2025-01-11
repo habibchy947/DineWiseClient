@@ -1,0 +1,30 @@
+[
+    {
+      "image": "https://i.ibb.co.com/2cKTSSN/pizza.png",
+      "category": "Pizza"
+    },
+    {
+      "image": "https://i.ibb.co.com/HH1ssTc/hot-soup.png",
+      "category": "Soup"
+    },
+    {
+      "image": "https://i.ibb.co.com/gdymSq4/beef-steak.png",
+      "category": "Steak"
+    },
+    {
+      "image": "https://i.ibb.co.com/ng12H5x/panna-cotta.png",
+      "category": "Dessert"
+    },
+    {
+      "image": "https://i.ibb.co.com/DVvfkrc/sandwich.png",
+      "category": "Sandwich"
+    },
+    {
+      "image": "https://i.ibb.co.com/X28sgwK/curry.png",
+      "category": "Curry"
+    },
+    {
+      "image": "https://i.ibb.co.com/P58vn0G/burger-1.png",
+      "category": "Burger"
+    }
+  ]

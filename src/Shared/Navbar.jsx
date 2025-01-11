@@ -4,9 +4,9 @@ import navLogo from '/favicon.png'
 import useAuth from '../Context/AuthContext/useAuth';
 const Navbar = () => {
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/all-foods'>All Foods</NavLink></li>
-        <li><NavLink to='/gallery'>Gallery</NavLink></li>
+        <NavLink to='/' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>Home</NavLink>
+        <NavLink to='/all-foods' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>All Foods</NavLink>
+        <NavLink to='/gallery' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>Gallery</NavLink>
     </>
     const location = useLocation()
     const [toggle, setToggle] = useState(false)
@@ -30,7 +30,7 @@ const Navbar = () => {
     }
     themeCheck()
     return (
-        <div className={`navbar py-3  px-0 container  mx-auto`}>
+        <div className={`navbar py-3 px-3  md:px-5 mx-auto`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -55,7 +55,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className="flex items-center gap-1"><span><img className='h-10 w-10' src={navLogo} alt="" /></span><span className='font-aguDisplay text-3xl md:text-4xl'>DineWise</span></Link>
+                <Link to='/' className="flex items-center gap-1"><span><img className='h-10 w-10' src={navLogo} alt="" /></span><span className='font-satisfy text-3xl md:text-4xl'>DineWise</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal gap-3 text-lg px-1">

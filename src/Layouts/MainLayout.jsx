@@ -5,9 +5,9 @@ import Footer from '../Shared/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='font-raleWay'>
+        <div className='font-raleWay max-w-screen-2xl mx-auto bg-slate-50 dark:bg-gray-900'>
             {/* navbar */}
-                <div className='dark:bg-gray-950'>
+                <div className='dark:bg-gray-950 sticky top-0 z-20 backdrop:blur-xl bg-transparent bg-opacity-95 bg-white'>
                 <Navbar></Navbar>
                 </div>
             <div className='min-h-[calc(100vh-306px)]'>

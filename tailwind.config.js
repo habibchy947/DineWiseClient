@@ -9,7 +9,8 @@ export default {
     extend: {
       fontFamily:{
         raleWay: ['Raleway', 'serif'],
-        aguDisplay: ["Agu Display", "serif"]
+        aguDisplay: ["Agu Display", "serif"],
+        satisfy: ["Satisfy", "serif"]
       },
       backgroundImage:{
         slide1: "url('/src/assets/slid2.jpg')",

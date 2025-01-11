@@ -5,4 +5,4 @@ const useAuth = () => {
     const authContext = useContext(AuthContext)
     return authContext
 }
-export default useAuth
+export default useAuth;

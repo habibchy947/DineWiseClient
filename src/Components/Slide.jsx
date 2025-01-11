@@ -4,23 +4,11 @@ import { motion } from "motion/react"
 import { easeInOut, easeOut } from 'motion';
 import { Fade } from 'react-awesome-reveal';
 const Slide = ({ image, title, description }) => {
-    // const titleVariant = {
-    //     hidden: { opacity: 0, y: -30 },
-    //     visible: { opacity: 1, y: 0 }
-    // }
-    // const descriptionVariant = {
-    //     hidden: {opacity : 0, y:20},
-    //     visible: {opacity :1 , y:0}
-    // }
-    // const buttonVariant = {
-    //     hidden: {opacity : 0, scale:0.8},
-    //     visible: {opacity :1 , scale:1}
-    // }
     return (
-        <div className='bg-blend-overlay relative bg-gray-700/70 bg-no-repeat bg-cover md:h-[30rem] lg:h-[28rem] h-[28rem]'
+        <div className='bg-blend-overlay relative bg-gray-700/70 bg-no-repeat bg-cover md:h-[30rem] lg:h-[26rem] h-[28rem]'
             style={{ backgroundImage: `url(${image})` }}
         >
-            <div className='w-11/12 md:w-6/12 lg:w-7/12 mx-auto text-center space-y-7 py-12 md:py-24'>
+            <div className='w-11/12 md:w-8/12 lg:w-7/12 mx-auto text-center space-y-7 py-12 md:py-14'>
                 <motion.h2
                     whileInView="visible"
                     initial="hidden"
