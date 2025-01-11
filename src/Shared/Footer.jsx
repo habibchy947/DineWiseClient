@@ -25,10 +25,10 @@ const Footer = () => {
                     </Link>
                     <p className='text-gray-100 font-semibold'>Serving exquisite flavors and unforgettable experiences. Visit us for a taste of perfection.</p>
                     <div className='flex justify-center md:justify-start gap-4'>
-                    <span className='text-3xl text-white'><IoLogoFacebook  className=''/></span>
-                    <span className='text-3xl text-white'><FaLinkedin /></span>
-                    <span className='text-3xl text-white'><FaXTwitter /></span>
-                    <span className='text-3xl text-white'><SiYoutube /></span>
+                    <Link to='https://www.facebook.com/prince.jihan.779' className='text-3xl text-white'><IoLogoFacebook  className=''/></Link>
+                    <Link to='https://www.linkedin.com/in/habibullah-alquaderi-web' className='text-3xl text-white'><FaLinkedin /></Link>
+                    <Link to='https://x.com/HAlquaderi34259' className='text-3xl text-white'><FaXTwitter /></Link>
+                    <Link to='https://www.youtube.com' className='text-3xl text-white'><SiYoutube /></Link>
                     </div>
                 </div>
                 <div className='flex flex-col justify-center md:justify-start items-center md:items-start'>
@@ -39,7 +39,7 @@ const Footer = () => {
                     </div>
                     <div className='flex items-center'>
                         <Lottie className='h-10 w-10' animationData={phoneIcon} loop={true}></Lottie>
-                        <span className='text-white'>01817225567, 01980376545</span>
+                        <span className='text-white'>01613516358, 01810278085</span>
                     </div>
                     <div className='flex items-center'>
                         <Lottie className='h-10 w-10' animationData={mailIcon} loop={true}></Lottie>
@@ -51,10 +51,10 @@ const Footer = () => {
                 <h2 className='text-2xl text-orange-500 mb-3'>Quick Link</h2>
                 <nav className='text-white'>
                     <ul className='space-y-3'>
-                        <li>About us</li>
                         <li>Contact us</li>
-                        <li>Home</li>
-                        <li>All foods</li>
+                        <li><Link to='/gallery'>Gallery</Link></li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/all-foods'>All foods</Link></li>
                     </ul>
                 </nav>
                 </div>

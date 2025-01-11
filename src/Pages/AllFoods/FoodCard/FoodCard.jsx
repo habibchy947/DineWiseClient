@@ -9,7 +9,7 @@ const FoodCard = ({ food}) => {
          className="card shadow-xl rounded-md bg-white dark:bg-gray-950">
             <figure className=''>
                 <img
-                    className='object-cover h-72 md:h-72 w-full transform transition-transform duration-300 inset-0 hover:scale-110'
+                    className='object-cover h-80 md:h-72 w-full transform transition-transform duration-300 inset-0 hover:scale-110'
                     src={foodPhoto}
                     alt="Shoes" />
             </figure>

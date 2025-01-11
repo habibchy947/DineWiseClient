@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
-    baseURL:'https://dine-wise-server-pi.vercel.app',
+    baseURL:'http://localhost:5000',
     withCredentials:true
 })
 const useAxiosSecure = () => {
