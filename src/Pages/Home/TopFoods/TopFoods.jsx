@@ -9,7 +9,7 @@ const TopFoods = () => {
     const { data: foods = [], isLoading} = useQuery({
         queryKey: ['foody'],
         queryFn: async () => {
-            const { data } = await axios.get(`http://localhost:5000/allFoods?top=true&limit=8`)
+            const { data } = await axios.get(`https://dine-wise-server-pi.vercel.app/allFoods?top=true&limit=8`)
             return data
         }
     })

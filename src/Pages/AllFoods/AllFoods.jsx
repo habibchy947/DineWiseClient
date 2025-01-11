@@ -12,7 +12,7 @@ const AllFoods = () => {
     const { data: foods = [], isPending, refetch } = useQuery({
         queryKey: ['foods', search, sort, filter],
         queryFn: async () => {
-            const { data } = await axios.get(`http://localhost:5000/allFoods?search=${search}&sort=${sort}&filter=${filter}`)
+            const { data } = await axios.get(`https://dine-wise-server-pi.vercel.app/allFoods?search=${search}&sort=${sort}&filter=${filter}`)
             return data
         },
         enabled: true

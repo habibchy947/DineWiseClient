@@ -25,7 +25,7 @@ const MyFoods = () => {
     const handleModal = (id) => {
         setSingleFood({})
         document.getElementById('my_modal_5').showModal()
-        axios.get(`http://localhost:5000/food-details/${id}`)
+        axios.get(`https://dine-wise-server-pi.vercel.app/food-details/${id}`)
             .then(res => setSingleFood(res.data))
     }
 
@@ -51,7 +51,7 @@ const MyFoods = () => {
         const food = { foodName, foodPhoto, category, origin, quantity, price, description, addBy, purchase_count: singleFood.purchase_count }
         // console.log(food)
         
-        axios.put(`http://localhost:5000/update-food/${singleFood._id}`, food)
+        axios.put(`https://dine-wise-server-pi.vercel.app/update-food/${singleFood._id}`, food)
             .then(res => {
                 // console.log(res.data)
                 if (res.data.modifiedCount) {
