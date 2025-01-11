@@ -45,8 +45,10 @@ const AddFood = () => {
         <>
             <div className='bg-addFoodBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
                 <h3 className='text-center text-6xl font-bold text-white'>Add Food</h3>
+                <p className='text-center mt-3 font-semibold text-base-200'>DineWise | <span className='font-medium text-gray-300'>Add Food</span></p>
+
             </div>
-            <div className='w-9/12 md:w-8/12 mx-auto rounded-md my-14 p-4 md:p-7 shadow-xl'>
+            <div className='w-9/12 md:w-8/12 mx-auto rounded-md my-14 bg-base-100 dark:bg-gray-800 p-4 md:p-7 shadow-xl'>
                 {/* row-1 */}
                 <form onSubmit={handleAddFood} action="" className='space-y-2'>
                     <div className='md:flex gap-6'>
@@ -126,7 +128,7 @@ const AddFood = () => {
                                 type="text"
                                 placeholder="write a short description"
                                 name='description'
-                                className="textarea rounded-md textarea-bordered dark:bg-gray-950 textarea-xs w-full"></textarea>
+                                className="textarea rounded-md textarea-bordered dark:bg-gray-950 textarea-sm w-full"></textarea>
                         </label>
                     </div>
                     <button className='btn border-none bg-orange-400 text-white font-semibold w-full'>Add Item</button>

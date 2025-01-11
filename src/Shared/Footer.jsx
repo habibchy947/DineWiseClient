@@ -51,7 +51,7 @@ const Footer = () => {
                 <h2 className='text-2xl text-orange-500 mb-3'>Quick Link</h2>
                 <nav className='text-white'>
                     <ul className='space-y-3'>
-                        <li>Contact us</li>
+                        <li><Link to='/contactUs'>Contact us</Link></li>
                         <li><Link to='/gallery'>Gallery</Link></li>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/all-foods'>All foods</Link></li>

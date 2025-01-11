@@ -15,6 +15,7 @@ const Gallery = () => {
         <div>
             <div className='bg-galleryBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
                 <h3 className='text-center text-6xl font-bold text-white'>Food Gallery</h3>
+                <p className='text-center mt-3 font-semibold text-base-200'>DineWise | <span className='font-medium text-gray-300'>Gallery</span></p>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-5 w-11/12 mx-auto py-10'>
                 {

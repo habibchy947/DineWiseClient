@@ -7,6 +7,7 @@ const Navbar = () => {
         <NavLink to='/' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>Home</NavLink>
         <NavLink to='/all-foods' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>All Foods</NavLink>
         <NavLink to='/gallery' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>Gallery</NavLink>
+        <NavLink to='/contactUs' className={({isActive})=> `${isActive && 'bg-orange-400 text-white font-semibold'} px-4 py-1 rounded-sm`}>Contact Us</NavLink>
     </>
     const location = useLocation()
     const [toggle, setToggle] = useState(false)
@@ -90,7 +91,6 @@ const Navbar = () => {
                 <div>
                     {user ?
                     <div className='flex items-center'>
-                        <button className='px-2 py-1 md:px-5 md:py-2 rounded-sm font-semibold text-black bg-gray-300' onClick={logOut}>LogOut</button>
                         {/* profile */}
                         <div className="dropdown dropdown-end z-50">
                             <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -107,6 +107,7 @@ const Navbar = () => {
                                 <li><NavLink to="/my-foods" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Foods</NavLink></li>
                                 <li><NavLink to="/add-food" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>Add Food</NavLink></li>
                                 <li><NavLink to="/my-orders" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Orders</NavLink></li>
+                                <li className=' pl-3 py-1 font-semibold rounded-md hover:bg-gray-200 cursor-pointer' onClick={logOut}>LogOut</li>
                             </ul>
                         </div>
                     </div>

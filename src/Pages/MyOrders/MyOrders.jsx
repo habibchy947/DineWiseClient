@@ -58,11 +58,16 @@ const MyOrders = () => {
         <div>
             <div className='bg-myOrderBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
                 <h3 className='text-center text-6xl font-bold text-white'>My Orders</h3>
+                <p className='text-center mt-3 font-semibold text-base-200'>DineWise | <span className='font-medium text-gray-300'>My Orders</span></p>
+
             </div>
-            <div className="overflow-x-auto w-11/12 md:w-10/12 mx-auto my-10 border-2 rounded-sm">
+            {isLoading && <Loading></Loading>}
+            {
+                foods.length ? 
+                <div className="overflow-x-auto w-11/12 mx-auto bg-base-100 dark:bg-gray-800 my-10 border-2 rounded-sm">
                 <table className="table">
                     {/* head */}
-                    <thead className='bg-slate-50 font-bold'>
+                    <thead className='bg-slate-100 text-base'>
                         <tr>
                             <th></th>
                             <th>Name</th>
@@ -74,7 +79,7 @@ const MyOrders = () => {
                     </thead>
                     
                     <tbody>
-                    {isLoading && <Loading></Loading>}
+                    
                         {/* row 1 */}
                         {
                             foods.map((food, idx) => <tr key={idx}>
@@ -108,6 +113,13 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
+            : 
+            <div className='w-11/12 mx-auto text-left'>
+            <h2 className='text-xl font-bold'>Orders</h2>
+            <p>You have no  orders</p>
+            </div>
+            }
+           
         </div>
     );
 };

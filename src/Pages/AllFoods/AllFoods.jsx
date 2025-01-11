@@ -21,6 +21,7 @@ const AllFoods = () => {
         <div>
             <div className='bg-allFoodBg bg-no-repeat bg-blend-overlay bg-[#696161] bg-cover bg-center py-20'>
                 <h3 className='text-center text-6xl font-bold text-white'>All Food</h3>
+                <p className='text-center mt-3 font-semibold text-base-200'>DineWise | <span className='font-medium text-gray-300'>All Foods</span></p>
             </div>
             {/* search */}
             <div className='w-11/12 mx-auto min-h-screen'>

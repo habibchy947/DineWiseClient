@@ -12,6 +12,7 @@ import FoodDetails from "../Pages/FoodDetails/FoodDetails";
 import FoodPurchase from "../Pages/FoodPurchase/FoodPurchase";
 import MyFoods from "../Pages/MyFoods/MyFoods";
 import MyOrders from "../Pages/MyOrders/MyOrders";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path:'/all-foods',
                 element:<AllFoods></AllFoods>
+            },
+            {
+                path:'/contactUs',
+                element:<Contact></Contact>
             },
             {
                 path:'/foodDetails/:id',
