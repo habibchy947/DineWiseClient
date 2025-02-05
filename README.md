@@ -8,8 +8,9 @@ This is a full-stack Restaurant Management Website developed using the MERN Stac
 
 
 ## Take a look
-![dinewise](https://github.com/user-attachments/assets/0324f419-0c79-4e75-a8dc-74ec106ca41a)
-## 🛠️ Technologies Used
+![dinewise](https://github.com/user-attachments/assets/e2efb639-d928-41d5-a1fb-a1d008cc777a)
+## 🛠️ Technologies Us
+
 ### Frontend
 - React.js
 - React Router
