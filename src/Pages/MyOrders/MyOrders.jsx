@@ -13,7 +13,7 @@ const MyOrders = () => {
     const axiosSecure = useAxiosSecure()
     
     const { data: foods = [], isLoading} = useQuery({
-        queryKey: ['foods', user.email],
+        queryKey: ['order', user.email],
         queryFn: async () => {
             const { data } = await axiosSecure.get(`/orders?email=${user?.email}`)
             return data

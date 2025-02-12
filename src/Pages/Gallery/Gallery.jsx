@@ -1,10 +1,18 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { FiEye } from 'react-icons/fi';
-import { useLoaderData } from 'react-router-dom';
 import Lightbox from 'yet-another-react-lightbox';
 import "yet-another-react-lightbox/styles.css";
+import Loading from '../../Shared/Loading';
+import { useQuery } from '@tanstack/react-query';
 const Gallery = () => {
-    const gallery = useLoaderData()
+    const { data: gallery = [], isLoading} = useQuery({
+        queryKey: ['gallery'],
+        queryFn: async () => {
+            const { data } = await axios.get('/gallery.json')
+            return data
+        }
+    })
     const [open, setOpen] = useState(false);
     const [focusIndex, setFocusIndex] = useState(0)
     const handleCurrentImage = (idx) => {
@@ -17,6 +25,9 @@ const Gallery = () => {
                 <h3 className='text-center text-6xl font-bold text-white'>Food Gallery</h3>
                 <p className='text-center mt-3 font-semibold text-base-200'>DineWise | <span className='font-medium text-gray-300'>Gallery</span></p>
             </div>
+            {
+                isLoading && <Loading/>
+            }
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-5 w-11/12 mx-auto py-10'>
                 {
                     gallery.map((image, idx) => (
