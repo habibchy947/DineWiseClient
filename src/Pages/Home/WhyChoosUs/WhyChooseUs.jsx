@@ -6,7 +6,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const WhyChooseUs = () => {
     return (
         <section className=" pt-20">
-            <div className='w-8/12 mx-auto text-center hidden md:block lg:hidden'>
+            <div className='w-8/12 mx-auto text-center hidden sm:block lg:hidden'>
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white mb-6">
                     Why Choose Us
                 </h2>
@@ -17,12 +17,12 @@ const WhyChooseUs = () => {
                     blend of passion, perfection, and exceptional service.
                 </p>
             </div>
-            <div className="w-11/12 mx-auto flex flex-col md:flex-row gap-10 items-center">
+            <div className="w-11/12 mx-auto flex flex-col sm:flex-row gap-10 items-center">
                 <div className="w-full md:w-1/2 mb-10 md:mb-0">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:hidden lg:block">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white mb-6 sm:hidden lg:block">
                         Why Choose Us
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-50 text-sm sm:text-base leading-relaxed mb-8 md:hidden lg:block">
+                    <p className="text-gray-600 dark:text-gray-50 text-sm sm:text-base leading-relaxed mb-8 sm:hidden lg:block">
                         At DineWise, we prioritize quality, flavor, and customer satisfaction.
                         With expertly crafted dishes and fresh ingredients, we create
                         unforgettable dining experiences tailored to your taste. Choose us for a
@@ -111,11 +111,11 @@ const WhyChooseUs = () => {
                     <Link to='/all-foods'><button className='h-fit mt-10 border-none text-white w-fit px-[1em] py-[0.25em] border-[1px] rounded-md bg-orange-400 flex justify-center items-center gap-[0.5em] overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]'><p>Explore our menu </p><FaArrowRight /></button></Link>
                 </div>
 
-                <div className="w-full md:w-1/2 h-fit object-cover flex justify-center">
+                <div className="w-full md:w-1/2 h-fit sm:object-cover flex justify-center">
                     <img
                         src={chooseUsImg}
                         alt="Chef presenting a dish"
-                        className="rounded-lg shadow-lg h-fit w-full md:w-full"
+                        className="rounded-lg shadow-lg object-cover h-[300px] md:h-fit w-full md:w-full"
                     />
                 </div>
             </div>

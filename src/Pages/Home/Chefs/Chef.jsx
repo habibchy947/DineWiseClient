@@ -14,7 +14,7 @@ const Chef = () => {
         <div className='w-11/12 mx-auto py-20'>
             <h2 className='text-xl text-center font-semibold text-orange-500'>Meet Our</h2>
             <h1 className='text-center text-4xl mt-4 font-bold'>Culinary Mastermind</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-12'>
                 {/* chef 1 */}
                 <div className='h-96 relative md:h-80 w-full overflow-hidden'>
                     <img className='object-cover h-full w-full transform transition-transform duration-300 inset-0 hover:scale-110' src={chef1} alt="" />
