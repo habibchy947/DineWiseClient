@@ -68,7 +68,7 @@ const MyFoods = () => {
                 <p className='text-center mt-3 font-semibold text-base-200'>DineWise | <span className='font-medium text-gray-300'>My Foods</span></p>
             </div>
             {isLoading && <Loading></Loading>}
-            <div className="overflow-x-auto w-11/12 bg-base-100 dark:bg-gray-800 mx-auto my-10 border-2 rounded-sm">
+            <div className="overflow-x-auto w-11/12 bg-base-100 dark:bg-gray-800 mx-auto my-10 border rounded-md shadow-md">
                 <table className="table">
                     {/* head */}
                     <thead className='bg-slate-100 text-base'>
@@ -107,7 +107,7 @@ const MyFoods = () => {
                                 <td>{food.quantity}</td>
                                 <td>{food.price}$</td>
                                 <th>
-                                    <button onClick={() => handleModal(food._id)} className="btn btn-sm btn-ghost text-xl text-orange-500"><MdEdit /></button>
+                                    <button onClick={() => handleModal(food._id)} className="btn btn-sm btn-ghost text-xl text-orange-500 bg-slate-100"><MdEdit /></button>
                                 </th>
 
                             </tr>)

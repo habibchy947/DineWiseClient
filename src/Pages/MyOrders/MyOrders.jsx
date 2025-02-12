@@ -64,7 +64,7 @@ const MyOrders = () => {
             {isLoading && <Loading></Loading>}
             {
                 foods.length ? 
-                <div className="overflow-x-auto w-11/12 mx-auto bg-base-100 dark:bg-gray-800 my-10 border-2 rounded-sm">
+                <div className="overflow-x-auto w-11/12 mx-auto bg-base-100 dark:bg-gray-800 my-10 border rounded-md shadow-md">
                 <table className="table">
                     {/* head */}
                     <thead className='bg-slate-100 text-base'>

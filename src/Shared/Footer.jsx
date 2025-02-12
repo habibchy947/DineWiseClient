@@ -12,7 +12,7 @@ import Lottie from 'lottie-react';
 const Footer = () => {
     return (
         <div className='bg-footerBg bg-blend-overlay bg-[#3f3c3c] bg-no-repeat bg-cover'>
-            <div className='w-11/12 mx-auto py-14 items-start grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12  text-center sm:text-left'>
+            <div className='w-11/12 mx-auto py-14 items-start grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12  text-center sm:text-left'>
                 <div className='space-y-5'>
                     <Link to='/'
                         className="flex items-center justify-center sm:justify-start gap-1">
