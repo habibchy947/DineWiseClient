@@ -48,7 +48,7 @@ const AllFoods = () => {
                                 refetch()
                             }}
                             placeholder="search"
-                            className="input input-bordered w-36 md:w-52 lg:w-96 dark:bg-gray-950 join-item" />
+                            className="input input-bordered w-52 sm:w-48  md:w-52 lg:w-96 dark:bg-gray-950 join-item" />
                         <button className="btn bg-orange-400 border-none text-white join-item">Search</button>
                     </div>
                     <div>
